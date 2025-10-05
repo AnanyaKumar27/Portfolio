@@ -1,0 +1,613 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+  scroll-padding-top: 80px; /* Adjust according to nav height */
+}
+
+
+/* Body Styles */
+body {
+ background-color: #0e0d0e; /* Fallback background color */
+font-family: 'Arial', sans-serif; /* Basic font family for readability */
+animation: pinkShift 7s ease-in-out infinite;
+}
+
+@keyframes pinkShift {
+  0% { background-color: #EAD1DC; }      /* Light lavender pink (hsl(297,93%,88%) equivalent) */
+  25% { background-color: #F8C3CD; }     /* Soft pink */
+  50% { background-color: #F2DEEB; }     /* Pale pink */
+  75% { background-color: #E6C1D7; }     /* Dusty pink */
+  100% { background-color: #D9A2C7; }    /* Warm pink */
+}
+
+
+.hero {
+    background: linear-gradient(#f2deeb, #e6c1d7);
+    height: 100vh;
+    text-align: center;
+    color: #3e1a8d;
+    padding-top: 60px;    /* Reduced from 150px */
+    margin-top: 10px;      /* Set to 0 if navbar is fixed */
+}
+
+
+
+.circular-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 20px auto 0 auto; /* Top margin and center horizontally */
+   border: 6px solid #d9d4d4;    /* white border around */
+  box-shadow: 0 4px 20px rgba(159, 213, 235, 0.934); /* subtle shadow */
+}
+.circular-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio-title {
+    font-size: 6rem;
+    font-weight: bold;
+    color: #3e1a8d; /* Dark purple for title */
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-family: 'DM Serif Display', serif;
+    color: #5d2b8c; /* Darker shade of purple */
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 23px;
+    color: #6a4b8b; /* Slightly lighter purple for subtitle */
+}
+
+/* CTA Button Styling */
+
+
+.extra {
+font-family: "Lobster", cursive;
+font-size: 75px;
+color: #6a4b8b;
+transition: text-shadow 0.3s ease;
+}
+
+.extra:hover {
+text-shadow: 0 0 10px #fff, 0 0 20px #6a4b8b, 0 0 40px #bb7fff;
+}
+
+
+
+/* Navigation Bar */
+nav {
+    background-color: #333; /* Dark background */
+    box-shadow: 0 5px 15px rgba(32, 227, 217, 0.853); /* Teal shadow */
+    position: fixed;       /* Fix nav to top of viewport */
+    top: 0;                /* Align at the very top */
+    left: 0;               /* Stretch from left */
+    width: 100vw;          /* Use full viewport width */
+    min-width: 100vw;      /* Prevent narrowing on small screens */
+    z-index: 1000;         /* Make sure nav stays above other content */
+    padding: 10px 0;       /* Optional: vertical padding */
+    box-sizing: border-box;
+}
+
+/* Responsive for small screens */
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 8px;
+    }
+    nav ul li {
+        margin: 6px 0;
+    }
+}
+
+/* Nav links: no side cutoff */
+nav ul {
+    display: flex;
+    flex-direction: row;    /* Always horizontal! */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;        /* Allows wrapping to new line if needed */
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+nav ul li {
+    margin: 0 9px;          /* Reduce for narrow screens */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fcfbfb;
+    font-size: 1.08rem;
+    font-weight: 500;
+    white-space: nowrap;    /* Prevents line breaks within items */
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    color: #43a7ff;
+}
+
+/* REMOVE or override any media query that says:
+   flex-direction: column;
+*/
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        padding: 5px;
+    }
+    nav ul li {
+        margin: 0 3px;
+    }
+}
+
+
+
+/* Section Styling */
+.section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #3e1a8d; /* Dark purple for headings */
+}
+
+/* Footer (Optional) */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+@media (max-width: 768px) {
+ .portfolio-title {
+font-size: 2.2rem;            /* Smaller, mobile-friendly heading */
+text-align: center;           /* Better readability */
+ margin-bottom: 12px;
+}
+.tagline, .subtitle {
+font-size: 1.2rem;
+text-align: center;           /* Consistent centering for taglines */
+margin-bottom: 10px;
+}
+.cta-button {
+padding: 12px 24px;           /* Touch-friendly size */
+font-size: 1.1rem;
+display: block;
+margin: 0 auto;               /* Center button horizontally */
+}
+ .circular-image {
+width: 140px;
+height: 140px;
+margin: 16px auto 0 auto;     /* Center and space on mobile */
+}
+nav ul {
+flex-direction: column;       /* Vertical nav for small screens */
+align-items: center;
+}
+nav ul li {
+margin: 10px 0;
+ }
+}
+.section {
+    padding: 80px 5vw;
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .section {
+        padding: 40px 3vw;
+    }
+}
+
+#about-me {
+    background: linear-gradient(135deg, #f2deeb, #e6c1d7);
+    border-radius: 16px;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 40px 30px;
+    box-shadow: 0 4px 20px rgba(100, 70, 150, 0.15);
+    color: #4b2b83;
+    text-align: center;
+    /* font-family:"Lobster Two", cursive; */
+}
+
+#about-me h2 {
+    font-family: 'Comic-sans', cursive;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #5d2b8c;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+#about-me p {
+    font-size: 1.5rem;
+    font-family:"Lobster Two", cursive;
+    line-height: 1.7;
+    color: #6a4b8b;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Responsive tweak for smaller screens */
+@media (max-width: 768px) {
+    #about-me {
+        padding: 30px 20px;
+        margin: 20px 15px;
+    }
+
+    #about-me h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    #about-me p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+.tv-screen {
+  width: 300px;
+  height: 80px;
+  background: #222;
+  border: 8px solid #555;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 30px #6a4b8b inset;
+  font-family: 'Dancing Script', cursive;
+   margin: 0 auto;
+  display: block;
+}
+
+.scrolling-text {
+  white-space: nowrap;
+  position: absolute;
+  will-change: transform;
+  animation: scroll-text 5s linear infinite;
+  color: #d2cdd8;
+  font-size: 35px;
+  line-height: 70px;
+  padding-left: 100%;
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .tv-screen {
+    width: 220px;
+    height: 60px;
+    border-width: 6px;
+  }
+  .scrolling-text {
+    font-size: 20px;
+    line-height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tv-screen {
+    width: 180px;
+    height: 50px;
+    border-width: 5px;
+  }
+  .scrolling-text {
+    font-size: 16px;
+    line-height: 50px;
+  }
+}
+#skills.section {
+    background: linear-gradient(135deg, #f2deeb, #e6c1d7);
+    border-radius: 16px;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 40px 30px;
+    box-shadow: 0 4px 20px rgba(100, 70, 150, 0.15);
+    color: #4b2b83;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+#skills.section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #5d2b8c;
+}
+#skills.section p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #6a4b8b;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+}
+@media (max-width: 768px) {
+    #skills.section {
+        padding: 30px 20px;
+        margin: 20px 15px;
+    }
+    #skills.section h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    #skills.section p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+button{
+    /* display:none; */
+    margin-top: 20px; 
+    color: #fff; 
+    background: #8313f3;
+    font-style: italic;
+    border: none; 
+    border-radius: 8px;
+    font-size: 1rem;
+    padding: 12px 28px;
+    cursor: pointer; 
+    font-family: 'DM Serif Display', serif";
+}
+
+button:hover{
+    box-shadow: 0 4px 20px rgba(98, 102, 239, 0.934);
+}
+#education {
+    background: linear-gradient(135deg, #f2deeb, #e6c1d7);
+    border-radius: 16px;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 40px 30px;
+    box-shadow: 0 4px 20px rgba(100, 70, 150, 0.15);
+    color: #4b2b83;
+    text-align: center;
+}
+
+#education h2 {
+    font-family: 'Comic-sans', cursive;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #5d2b8c;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#education p {
+    font-size: 1.3rem;
+    font-family:"Lobster Two", cursive;
+    line-height: 1.7;
+    color: #6a4b8b;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Responsive tweak for smaller screens */
+@media (max-width: 768px) {
+    #education {
+        padding: 30px 20px;
+        margin: 20px 15px;
+    }
+    #education h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    #education p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+#projects {
+    background: linear-gradient(135deg, #f2deeb, #e6c1d7);
+    border-radius: 16px;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 40px 30px;
+    box-shadow: 0 4px 20px rgba(100, 70, 150, 0.15);
+    color: #4b2b83;
+    text-align: center;
+}
+
+#projects h2 {
+    font-family: 'Comic-sans', cursive;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #5d2b8c;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#projects p {
+    font-size: 1.5rem;
+    font-family: "Lobster Two", cursive;
+    line-height: 1.7;
+    color: #6a4b8b;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    #projects {
+        padding: 30px 20px;
+        margin: 20px 15px;
+    }
+    #projects h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    #projects p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px;
+    margin-top: 30px;
+}
+
+.project-card {
+    background: #f2deeb;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(100, 70, 150, 0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 18px 12px;
+    min-height: 330px;   /* adjust as needed for equal height */
+    min-width: 200px;
+    max-width: 270px;
+    transition: box-shadow 0.3s;
+}
+
+.project-card:hover {
+    box-shadow: 0 8px 32px rgb(80, 181, 249);
+}
+
+.project-card img {
+    max-width: 100%;
+    max-height: 180px;
+    width: auto;
+    height: auto;
+    margin-bottom: 12px;
+    display: block;
+    background: #e6c1d7;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+.project-card span {
+    display: block;
+    font-size: 1.1rem;
+    color: #4b2b83;
+    font-family: 'Lobster Two', cursive;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.project-card a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 18px;
+    }
+    .project-card {
+        min-width: 120px;
+        min-height: 210px;
+        padding: 10px 7px;
+    }
+    .project-card img {
+        height: 90px;
+    }
+}
+#contact {
+    background: linear-gradient(135deg, #f2deeb, #e6c1d7);
+    border-radius: 16px;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 40px 30px;
+    box-shadow: 0 4px 20px rgba(100, 70, 150, 0.15);
+    color: #4b2b83;
+    text-align: center;
+}
+
+#contact h2 {
+    font-family: 'Comic-sans', cursive;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #5d2b8c;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#contact p {
+    font-size: 1.5rem;
+    font-family:"Lobster Two", cursive;
+    line-height: 1.7;
+    color: #6a4b8b;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    #contact {
+        padding: 30px 20px;
+        margin: 20px 15px;
+    }
+    #contact h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    #contact p {
+        font-size: 5rem;
+        line-height: 1.6;
+    }
+}
+.fa-github {
+    color: #181717;         /* GitHub Black */
+}
+
+.fa-linkedin {
+    color: #0077B5;         /* LinkedIn Blue */
+}
+
+.fa-discord {
+    color: #5865F2;         /* Discord purple */
+}
+
+
+.fa-code {
+    color: #FFA116;        /*leetcode yellow*/ 
+}
+
